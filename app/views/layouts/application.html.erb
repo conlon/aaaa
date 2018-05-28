@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aaaa</title>
+    <title>A&#38;A by email</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,5 +11,18 @@
 
   <body>
     <%= yield %>
+
+    <div id="container">
+      <div id="user_header">
+        <% if current_user %>
+          Logged in as <%= current_user.email %>.
+          <%= link_to "Log Out", logout_path %>
+        <% else %>
+          <%= link_to "Sign Up", signup_path %> or
+          <%= link_to "Log In", login_path %>
+        <% end %>
+      </div>
+    </div>
+
   </body>
 </html>

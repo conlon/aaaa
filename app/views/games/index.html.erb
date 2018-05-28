@@ -1,0 +1,18 @@
+<h1>My games</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>State</th>
+    <th></th>
+  </tr>
+
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= game.name %></td>
+      <td><%= link_to 'Show', game_path(game) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>
