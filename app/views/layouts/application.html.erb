@@ -10,12 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
-
     <div id="container">
+      <!-- <div id="home">
+        <h1>A&#38;A by email</h1>
+      </div> -->
+
       <div id="user_header">
         <% if current_user %>
-          Logged in as <%= current_user.email %>.
+          <%= current_user.username %>
           <%= link_to "Log Out", logout_path %>
         <% else %>
           <%= link_to "Sign Up", signup_path %> or
@@ -24,5 +26,6 @@
       </div>
     </div>
 
+    <%= yield %>
   </body>
 </html>
